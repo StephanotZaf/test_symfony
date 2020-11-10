@@ -1,0 +1,76 @@
+<div class="container">
+<div class="card card-custom">
+        <div class="card-header">
+            <h3 class="card-title">
+                Nouveau contrat
+            </h3>
+        </div>
+        <!--begin::Form-->
+        {{  form_start(form) }}
+        <div class="card-body">
+            <div class="form-group row">
+                {{ form_label(form.numeroPayement,'Numero payement', {'label_attr':{
+                    'class':'col-lg-3 col-form-label text-lg-right'
+                }}) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.numeroPayement, {'attr':{
+                        'class':'form-control'
+                    }}) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                {{ form_label(form.montant,'Montant', {'label_attr':{
+                    'class':'col-lg-3 col-form-label text-lg-right'
+                }}) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.montant, {'attr':{
+                        'class':'form-control'
+                    }}) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                {{ form_label(form.description,'Description', {'label_attr':{
+                    'class':'col-lg-3 col-form-label text-lg-right'
+                }}) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.description, {'attr':{
+                        'class':'form-control'
+                    }}) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                {{ form_label(form.bank,'Banque', {'label_attr':{
+                    'class':'col-lg-3 col-form-label text-lg-right'
+                }}) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.bank, {'attr':{
+                        'class':'form-control'
+                    }}) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                {{ form_label(form.payedAt,'Payé le', {'label_attr':{
+                    'class':'col-lg-3 col-form-label text-lg-right'
+                }}) }}
+                <div class="col-lg-6">
+                    {{ form_widget(form.payedAt, {'attr':{
+                        'class':'form-control'
+                    }}) }}
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-2">
+                </div>
+                <div class="col-lg-6">
+                    <button class="btn btn-success mr-2">{{ button_label|default('Enregistrer') }}</button>
+                    <a class="btn btn-success mr-2" href="{{ path('cheque_index') }}">back to list</a>
+                </div>
+            </div>
+        </div>
+        {{ form_end(form) }}
+
+    </div>
+
+</div>

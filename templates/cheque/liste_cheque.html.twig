@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+</header>
+<body>
+<!--begin: Datatable-->
+<table class="table">
+    <thead class="thead-dark">
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Date de payement</th>
+        <th scope="col">Numero de payement</th>
+        <th scope="col">Montant</th>
+        <th scope="col">Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for cheque in cheques %}
+        <tr>
+            <td scope="row">{{ cheque.id }}</td>
+            <td scope="row">{{ cheque.payedAt ? cheque.payedAt|date('Y-m-d H:i:s') : '' }}</td>
+            <td scope="row">{{ cheque.numeroPayement }}</td>
+            <td scope="row">{{ cheque.montant }}</td>
+            <td scope="row">{{ cheque.description }}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="10">no records found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<!--end: Datatable-->
+</body>
+</html>
